@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "13ce8c04-e637-43f3-98b4-e214ddcffa2c",
+		"name": "Digit predictor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19365947"
+	},
+	"item": [
+		{
+			"name": "Get Prediction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f01b271-f545-43a0-821b-709c4ff19fca"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/predict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
