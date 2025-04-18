@@ -4,12 +4,19 @@ import numpy as np
 import mlflow
 import tensorflow as tf
 
+MODEL_ID = "7e8210778802463d8425c601f8af7331"
+
 IMG_SIZE = 28
 
 app = FastAPI()
 
 # Load model from MLflow
-model = mlflow.tensorflow.load_model("runs:/eaea2032a58f4cc28970a2f126a1939c/model")
+model = mlflow.tensorflow.load_model(f"runs:/{MODEL_ID}/model")
+
+@app.get("/")
+async def home():
+    return {"message": "Hello World!"}
+
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
